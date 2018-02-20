@@ -19,7 +19,7 @@ import copy
 import os
 
 
-_N_CHR = 22
+_N_CHR = 17
 # complementary bases
 COMPLEMENT = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
 # bases
@@ -147,7 +147,7 @@ def _read_chr_split_files(chr_arg, not_chr_arg, log, noun, parsefunc, **kwargs):
             log.log('Reading {N} from {F} ...'.format(F=not_chr_arg, N=noun))
             out = parsefunc(_splitp(not_chr_arg), **kwargs)
         elif chr_arg:
-            f = ps.sub_chr(chr_arg, '[1-22]')
+            f = ps.sub_chr(chr_arg, '[1-17]')
             log.log('Reading {N} from {F} ...'.format(F=f, N=noun))
             out = parsefunc(_splitp(chr_arg), _N_CHR, **kwargs)
     except ValueError as e:
